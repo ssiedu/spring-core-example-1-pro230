@@ -9,8 +9,8 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<bean id="d1" class="com.ssi.Demo"/>
-	<bean id="t1" class="com.ssi.Test"/>
+	<bean id="d1" class="com.ssi.Demo" scope="singleton" lazy-init="true" />
+	
 
 	
 </beans>
