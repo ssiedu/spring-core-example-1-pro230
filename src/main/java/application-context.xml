@@ -8,6 +8,27 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<bean id="c1" class="com.ssi.Customer">
+		<property name="code" value="1001"/>
+		<property name="cname" value="abcd"/>
+		<property name="mobile" value="8989822334"/>
+		<property name="email" value="ab@gmail.com"/>
+		<!-- Injecting Address Bean In Customer Bean -->
+		<property name="address" ref="adr2"/>	
+	</bean>
+	
+	<bean id="adr1" class="com.ssi.Address">
+		<property name="hno" value="555"/>
+		<property name="city" value="Bhopal"/>
+		<property name="state" value="MP"/>
+	</bean>
+	<bean id="adr2" class="com.ssi.Address">
+		<property name="hno" value="666"/>
+		<property name="city" value="Delhi"/>
+		<property name="state" value="Delhi"/>
+	</bean>
+	
+	
 
 	<bean id="d1" class="com.ssi.Demo" scope="singleton" lazy-init="true" />
 	
