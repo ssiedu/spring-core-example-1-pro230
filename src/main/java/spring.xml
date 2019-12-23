@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+
+	<bean id="e1" class="com.ssi.Emp" parent="info">
+		<property name="eno" value="111" />
+		<property name="name" value="AAA" />
+		<property name="mobiles">
+			<!-- <set> <value>8888899999</value> <value>6666677777</value> <value>6666677777</value> 
+				</set> -->
+			<list>
+				<value>8888899999</value>
+				<value>6666677777</value>
+			</list>
+		</property>
+		<property name="emails">
+			<props>
+				<prop key="manoj@gmail.com">personal</prop>
+				<prop key="manoj@ssi.com">official</prop>
+			</props>
+		</property>
+
+
+		<!-- <property name="emails"> <map> <entry key="manoj@gmail.com" value="personal"/> 
+			<entry key="manoj.sarwate@ssiedu.in" value="official"/> </map> </property> -->
+
+		<!-- <property name="addresses">
+			<list>
+				<ref bean="adr1" />
+				<ref bean="adr2" />
+			</list>
+		</property> -->
+
+		<property name="addresses">
+			<map>
+				<entry key="temporary" value-ref="adr1"/>
+				<entry key="permanent" value-ref="adr2"/>
+			</map>		
+		</property>
+	</bean>
+	<bean id="e2" class="com.ssi.Emp" parent="info">
+		<property name="eno" value="222" />
+		<property name="name" value="BBB" />
+	</bean>
+	<bean id="e3" class="com.ssi.Emp" parent="info">
+		<property name="eno" value="333" />
+		<property name="name" value="CCC" />
+	</bean>
+	<bean id="info" abstract="true">
+		<property name="branch" value="Palasia" />
+		<property name="city" value="Indore" />
+	</bean>
+
+	<bean id="adr1" class="com.ssi.Address">
+		<property name="hno" value="555" />
+		<property name="city" value="Bhopal" />
+		<property name="state" value="MP" />
+	</bean>
+	<bean id="adr2" class="com.ssi.Address">
+		<property name="hno" value="666" />
+		<property name="city" value="Delhi" />
+		<property name="state" value="Delhi" />
+	</bean>
+
+</beans>
+
