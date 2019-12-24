@@ -8,7 +8,12 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-
+	<bean id="course" class="com.ssi.Course">
+		<property name="code" value="5003"/>
+		<property name="name" value="Hadoop"/>
+		<property name="duration" value="12"/>
+		<property name="fees" value="25000"/>
+	</bean>
 
 	<bean id="e1" class="com.ssi.Emp" parent="info">
 		<property name="eno" value="111" />
