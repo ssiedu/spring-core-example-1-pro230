@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd"
+    default-init-method="start"
+    default-destroy-method="stop"
+    default-lazy-init="true"
+    >
+	
+	<bean id="address" class="com.ssi.Address" init-method="doIt" destroy-method="doAtEnd">	
+		<property name="hno" value="111"/>
+		<property name="city" value="Indore"/>
+		<property name="state" value="MP"/>
+	</bean>	
+	
+</beans>
+
